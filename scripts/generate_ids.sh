@@ -16,6 +16,7 @@ ORG_URL="https://github.com/stormbreaker-project"
 # Repositories
 REPOS="
 	linux-asus-X00P-3.18
+	linux-asus-X00P-4.9
 	linux-asus-X01AD
 	linux-oneplus-billie
 	linux-xiaomi-msm8953
