@@ -9,43 +9,43 @@
     "device": "daisy",
     "branch": "master",
     "status": "Passing",
-    "time": "120 seconds"
+    "time": "117 seconds"
   },
   {
     "device": "mido",
     "branch": "master",
-    "status": "Failed",
-    "time": "20 seconds"
+    "status": "Passing",
+    "time": "19 seconds"
   },
   {
     "device": "sakura",
     "branch": "master",
     "status": "Passing",
-    "time": "27 seconds"
+    "time": "26 seconds"
   },
   {
     "device": "tissot",
     "branch": "master",
     "status": "Passing",
-    "time": "26 seconds"
+    "time": "24 seconds"
   },
   {
     "device": "vince",
     "branch": "master",
     "status": "Passing",
-    "time": "28 seconds"
+    "time": "27 seconds"
   },
   {
     "device": "X00P",
     "branch": "master",
     "status": "Passing",
-    "time": "60 seconds"
+    "time": "61 seconds"
   },
   {
     "device": "X01AD",
     "branch": "master",
     "status": "Failed",
-    "time": "1 seconds"
+    "time": "2 seconds"
   },
   {
     "device": "ysl",
