@@ -71,7 +71,7 @@ compare_commit_id() {
 			    echo "Warning: Contact admin to generate the id"
 			    echo ""
 		    else
-			    DEVICE=$(echo $repo | cut -d'-' -f3)
+			    DEVICE=$(echo $repo | cut -d'-' -f3,4)
 			    if [[ $DEVICE == "msm8953" ]]; then
 				    local chipset="$DEVICE"
 				    echo "Triggering multiple builds!"
