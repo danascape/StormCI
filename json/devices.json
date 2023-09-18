@@ -9,7 +9,7 @@
     "device": "daisy",
     "branch": "master",
     "status": "Passing",
-    "time": "117 seconds"
+    "time": "29 seconds"
   },
   {
     "device": "mido",
@@ -24,33 +24,45 @@
     "time": "26 seconds"
   },
   {
+    "device": "spacewar",
+    "branch": "master",
+    "status": "Failed",
+    "time": "183 seconds"
+  },
+  {
     "device": "tissot",
     "branch": "master",
     "status": "Passing",
-    "time": "24 seconds"
+    "time": "25 seconds"
   },
   {
     "device": "vince",
     "branch": "master",
     "status": "Passing",
-    "time": "27 seconds"
+    "time": "28 seconds"
   },
   {
-    "device": "X00P",
+    "device": "X00P-3.18",
     "branch": "master",
     "status": "Passing",
-    "time": "61 seconds"
+    "time": "59 seconds"
+  },
+  {
+    "device": "X00P-4.9",
+    "branch": "master",
+    "status": "Passing",
+    "time": "120 seconds"
   },
   {
     "device": "X01AD",
     "branch": "master",
     "status": "Failed",
-    "time": "2 seconds"
+    "time": "1 seconds"
   },
   {
     "device": "ysl",
     "branch": "master",
     "status": "Passing",
-    "time": "28 seconds"
+    "time": "27 seconds"
   }
 ]
