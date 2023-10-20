@@ -10,6 +10,9 @@
 # Workspace Path
 WORKSPACE_PATH="$HOME/builds"
 
+# Scripts Path
+CI_PATH="$HOME/stormCI"
+
 # Organization URL
 ORG_URL="https://github.com/stormbreaker-project"
 
@@ -24,10 +27,42 @@ REPOS="
 	linux-xiaomi-msm8953
 	"
 
-# Clean up old repositories
-rm -rf $WORKSPACE_PATH/*
+check_kernel_repo()
+{
+	echo "Checking if $repo already exists"
+	if [[ -d "$WORKSPACE_PATH/$repo" ]]; then
+		echo "$repo exists. Checking commit-id."
+		compare_commit_id
+	else
+		echo "$repo does not exist. Cloning the repository."
+		git clone --depth 1 -b master $ORG_URL/$repo $WORKSPACE_PATH/$repo
+	fi
 
-# Clone repositories
+}
+
+compare_commit_id()
+{
+	echo "Fetching remote information of the device"
+	cd $WORKSPACE_PATH/$repo
+	# Check commit ID from archive
+	PREVIOUS_COMMIT_ID=$(cat $CI_PATH/commit-id/$repo-id)
+	# Check commit ID of currently cloned repository
+	CURRENT_COMMIT_ID=$(git log -1 --pretty=oneline | awk '{print $1}')
+	cd $CI_PATH
+	if [[ "$PREVIOUS_COMMIT_ID" == "$CURRENT_COMMIT_ID" ]]; then
+		echo "Commit ID ($CURRENT_COMMIT_ID) matches. Skipping Clone."
+	else
+		echo "Commit IDs are different."
+		echo "Cloning the device repository after deleting"
+		rm -rf $WORKSPACE_PATH/$repo
+		if [[ -d "$WORKSPACE_PATH/$repo" ]]; then
+			echo "Something went wrong!"
+		else
+			git clone --depth 1 -b master $ORG_URL/$repo $WORKSPACE_PATH/$repo
+		fi
+	fi
+}
+
 for repo in $REPOS; do
-    git clone --depth 1 -b master $ORG_URL/$repo $WORKSPACE_PATH/$repo
+    check_kernel_repo
 done
