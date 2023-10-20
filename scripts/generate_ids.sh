@@ -27,7 +27,7 @@ REPOS="
 # Remove previous ids
 rm -rf $CI_PATH/commit-id/*
 
-generate_commit_id()
+generate_commit_ids()
 {
 	for repo in $REPOS; do
 		COMMIT_ID=$(git ls-remote $ORG_URL/$repo | head -1 | cut -f -1)
@@ -35,4 +35,14 @@ generate_commit_id()
 	done
 }
 
-generate_commit_id
+result_commit_ids()
+{
+	git add commit-id/
+	git commit -sm "[CI]: Generate/Update Commit IDs."
+}
+
+# Generate/Update Commit IDs.
+generate_commit_ids
+
+# Create Commit of Updated IDs.
+result_commit_ids

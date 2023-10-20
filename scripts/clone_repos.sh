@@ -66,3 +66,6 @@ compare_commit_id()
 for repo in $REPOS; do
     check_kernel_repo
 done
+
+# Generate/Update Commit IDs.
+bash $CI_PATH/scripts/generate_ids.sh
