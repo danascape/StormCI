@@ -1,0 +1,6 @@
+scripts/build.sh
+scripts/concatenate_json.sh
+scripts/generate_ids.sh
+scripts/ci_terminal.sh
+scripts/clone_repos.sh
+scripts/ci_telegram.sh
