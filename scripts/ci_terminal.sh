@@ -10,6 +10,7 @@
 # Scripts Path
 CI_PATH="$HOME/stormCI"
 
-function sendMessage() {
+function sendMessage()
+{
 	echo "${*}"
 }

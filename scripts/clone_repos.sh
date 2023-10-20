@@ -64,7 +64,7 @@ compare_commit_id()
 }
 
 for repo in $REPOS; do
-    check_kernel_repo
+	check_kernel_repo
 done
 
 # Generate/Update Commit IDs.
