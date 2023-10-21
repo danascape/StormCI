@@ -1,6 +1,6 @@
 {
   "device": "tissot",
   "branch": "master",
-  "status": "Passing",
-  "time": "28 seconds"
+  "status": "Failed",
+  "time": "0 seconds"
 }

@@ -1,6 +1,6 @@
 {
   "device": "ysl",
   "branch": "master",
-  "status": "Passing",
-  "time": "30 seconds"
+  "status": "Failed",
+  "time": "0 seconds"
 }

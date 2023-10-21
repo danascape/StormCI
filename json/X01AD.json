@@ -1,6 +1,6 @@
 {
   "device": "X01AD",
   "branch": "master",
-  "status": "Failed",
-  "time": "2 seconds"
+  "status": "Passing",
+  "time": "144 seconds"
 }
