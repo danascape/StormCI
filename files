@@ -4,3 +4,4 @@ scripts/generate_ids.sh
 scripts/ci_terminal.sh
 scripts/clone_repos.sh
 scripts/ci_telegram.sh
+scripts/upload_dist.sh
