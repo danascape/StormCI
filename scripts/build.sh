@@ -176,7 +176,6 @@ kernel_build()
 		cd $WORKSPACE_PATH/linux*$chipset*
 		sw b $device
 		buildStatus=$(check_kernel_image $WORKSPACE_PATH/linux*$chipset)
-		echo "lahjsdasjklhdasjkhd"
 		buildStatus=$(echo "$buildStatus" | tr -d '[:space:]')
 		case "$buildStatus" in
 			true) set_build_status $device pass ;;
