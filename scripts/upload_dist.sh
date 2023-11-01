@@ -80,49 +80,48 @@ create_org_repository()
 		return 1
 	fi
 
-    local device
+	local device
 	local repo
-    device="$2"
+	device="$2"
 	repo="$1"
 	curl -s -X POST -H "Authorization: token ${GITHUB_API_TOKEN}" -d '{ "name": "'"$repo"'" }' "https://api.github.com/orgs/${ORG_URL}/repos" > /dev/null
 
-    setup_org_repository "$repo" "$device"
+	setup_org_repository "$repo" "$device"
 }
 
 setup_org_repository()
 {
-    local DEVICE
-    local repo
-    repo="$1"
-    DEVICE="$2"
-
+	local DEVICE
+	local repo
+	repo="$1"
+	DEVICE="$2"
 
 	mkdir $DIST_PATH/$repo
-    echo "$repo" >> $DIST_PATH/$repo/README.md
+	echo "$repo" >> $DIST_PATH/$repo/README.md
 
-    cd $DIST_PATH/$repo
-    REPO_URL="$REMOTE_URL/$repo"
-    git init
-    git remote add origin $REPO_URL
-    git checkout -b master
-    git add README.md
-    git commit -sm "[CI]: Create remote for $repo"
-    git push -u origin master
+	cd $DIST_PATH/$repo
+	REPO_URL="$REMOTE_URL/$repo"
+	git init
+	git remote add origin $REPO_URL
+	git checkout -b master
+	git add README.md
+	git commit -sm "[CI]: Create remote for $repo"
+	git push -u origin master
 }
 
 for repo in ${REPOS}; do
 	DEVICE=$(echo $repo | awk -F'_' '{split($3, a, "-"); print a[1]}')
 	if [[ "$DEVICE" == "X00P" ]]; then
 		echo "X00P Detected. Using X00P family."
-        for devRepo in ${X00P_FAMILY}; do
-            check_kernel_repo $devRepo
-        done
+		for devRepo in ${X00P_FAMILY}; do
+			check_kernel_repo $devRepo
+		done
 	elif [[ "$DEVICE" == "msm8953" ]]; then
 		echo "msm8953 Family Detected."
-        for devRepo in ${MSM8953_FAMILY}; do
-            check_kernel_repo $devRepo
-        done
+		for devRepo in ${MSM8953_FAMILY}; do
+			check_kernel_repo $devRepo
+		done
 	else
-        check_kernel_repo $repo
+		check_kernel_repo $repo
 	fi
 done
