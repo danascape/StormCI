@@ -3,7 +3,7 @@
     "device": "billie",
     "branch": "master",
     "status": "Passing",
-    "time": "195 seconds"
+    "time": "464 seconds"
   },
   {
     "device": "daisy",
@@ -27,7 +27,7 @@
     "device": "spacewar",
     "branch": "master",
     "status": "Failed",
-    "time": "382 seconds"
+    "time": "535 seconds"
   },
   {
     "device": "tissot",
@@ -45,19 +45,19 @@
     "device": "X00P-3.18",
     "branch": "master",
     "status": "Passing",
-    "time": "80 seconds"
+    "time": "175 seconds"
   },
   {
     "device": "X00P-4.9",
     "branch": "master",
     "status": "Passing",
-    "time": "130 seconds"
+    "time": "317 seconds"
   },
   {
     "device": "X01AD",
     "branch": "master",
     "status": "Passing",
-    "time": "144 seconds"
+    "time": "317 seconds"
   },
   {
     "device": "ysl",
