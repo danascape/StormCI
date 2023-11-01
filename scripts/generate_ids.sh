@@ -25,13 +25,13 @@ REPOS="
 	"
 
 # Remove previous ids
-rm -rf $CI_PATH/commit-id/*
+rm -rf "$CI_PATH"/commit-id/*
 
 generate_commit_ids()
 {
 	for repo in $REPOS; do
-		COMMIT_ID=$(git ls-remote $ORG_URL/$repo | head -1 | cut -f -1)
-		echo "$COMMIT_ID" >> $CI_PATH/commit-id/$repo-id
+		COMMIT_ID=$(git ls-remote $ORG_URL/"$repo" | head -1 | cut -f -1)
+		echo "$COMMIT_ID" >> "$CI_PATH"/commit-id/"$repo"-id
 	done
 }
 

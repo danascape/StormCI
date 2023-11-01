@@ -35,7 +35,7 @@ check_kernel_repo()
 		compare_commit_id
 	else
 		echo "$repo does not exist. Cloning the repository."
-		git clone --depth 1 -b master $ORG_URL/$repo $WORKSPACE_PATH/$repo
+		git clone --depth 1 -b master $ORG_URL/"$repo" "$WORKSPACE_PATH"/"$repo"
 	fi
 
 }
@@ -43,22 +43,22 @@ check_kernel_repo()
 compare_commit_id()
 {
 	echo "Fetching remote information of the device"
-	cd $WORKSPACE_PATH/$repo
+	cd "$WORKSPACE_PATH"/"$repo" || exit 1
 	# Check commit ID from archive
-	PREVIOUS_COMMIT_ID=$(cat $CI_PATH/commit-id/$repo-id)
+	PREVIOUS_COMMIT_ID=$(cat "$CI_PATH"/commit-id/"$repo"-id)
 	# Check commit ID of currently cloned repository
 	CURRENT_COMMIT_ID=$(git log -1 --pretty=oneline | awk '{print $1}')
-	cd $CI_PATH
+	cd "$CI_PATH" || exit 1
 	if [[ "$PREVIOUS_COMMIT_ID" == "$CURRENT_COMMIT_ID" ]]; then
 		echo "Commit ID ($CURRENT_COMMIT_ID) matches. Skipping Clone."
 	else
 		echo "Commit IDs are different."
 		echo "Cloning the device repository after deleting"
-		rm -rf $WORKSPACE_PATH/$repo
+		rm -rf "${WORKSPACE_PATH:?}"/"$repo"
 		if [[ -d "$WORKSPACE_PATH/$repo" ]]; then
 			echo "Something went wrong!"
 		else
-			git clone --depth 1 -b master $ORG_URL/$repo $WORKSPACE_PATH/$repo
+			git clone --depth 1 -b master $ORG_URL/"$repo" "$WORKSPACE_PATH"/"$repo"
 		fi
 	fi
 }
@@ -68,4 +68,4 @@ for repo in $REPOS; do
 done
 
 # Generate/Update Commit IDs.
-bash $CI_PATH/scripts/generate_ids.sh
+bash "$CI_PATH"/scripts/generate_ids.sh

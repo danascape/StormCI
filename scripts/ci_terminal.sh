@@ -6,10 +6,6 @@
 # SPDX-License-Identifier: Apache-2.0 license
 #
 
-# Set Variables
-# Scripts Path
-CI_PATH="$HOME/stormCI"
-
 function sendMessage()
 {
 	echo "${*}"

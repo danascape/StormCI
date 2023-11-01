@@ -16,7 +16,7 @@ CI_PATH="$HOME/stormCI"
 # Set tg var.
 function sendMessage()
 {
-	curl -s "https://api.telegram.org/bot$API_KEY/sendmessage" --data "text=${*}&chat_id="$CHAT_ID"&parse_mode=HTML" > /dev/null
+	curl -s "https://api.telegram.org/bot$API_KEY/sendmessage" --data "text=${*}&chat_id=${CHAT_ID}&parse_mode=HTML" > /dev/null
 }
 
 sendMessage "Hello"
