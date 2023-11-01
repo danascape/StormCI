@@ -12,12 +12,12 @@ CI_PATH="$HOME/stormCI"
 
 concatenate_jsons()
 {
-    jq -s '.' $(cat $CI_PATH/json-files) > $CI_PATH/json/devices.json
+	jq -s '.' $(cat $CI_PATH/json-files) > $CI_PATH/json/devices.json
 }
 
 result_json_ids()
 {
-    git add json/
+	git add json/
 	git commit -sm "[CI]: Update Device JSONs"
 }
 
