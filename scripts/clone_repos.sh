@@ -8,10 +8,13 @@
 
 # Set Variables
 # Workspace Path
-WORKSPACE_PATH="$HOME/builds"
+WORKSPACE_PATH="/mnt/build/builds"
+
+# Home Path
+HOME_PATH="/mnt/build"
 
 # Scripts Path
-CI_PATH="$HOME/stormCI"
+CI_PATH="$HOME_PATH/stormCI"
 
 # Organization URL
 ORG_URL="https://github.com/stormbreaker-project"

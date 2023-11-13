@@ -13,8 +13,11 @@ WORKSPACE_PATH="$HOME/builds"
 # Dist Path.
 DIST_PATH="$WORKSPACE_PATH/dist"
 
-# Scripts Path.
-CI_PATH="$HOME/stormCI"
+# Home Path
+HOME_PATH="/mnt/build"
+
+# Scripts Path
+CI_PATH="$HOME_PATH/stormCI"
 
 # Organization URL (To Create repositories).
 ORG_URL="danascape-projects"
