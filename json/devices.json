@@ -3,19 +3,19 @@
     "device": "billie",
     "branch": "master",
     "status": "Passing",
-    "time": "464 seconds"
+    "time": "221 seconds"
   },
   {
     "device": "daisy",
     "branch": "master",
     "status": "Failed",
-    "time": "0 seconds"
+    "time": "3 seconds"
   },
   {
     "device": "mido",
     "branch": "master",
     "status": "Failed",
-    "time": "0 seconds"
+    "time": "1 seconds"
   },
   {
     "device": "sakura",
@@ -27,7 +27,7 @@
     "device": "spacewar",
     "branch": "master",
     "status": "Failed",
-    "time": "535 seconds"
+    "time": "292 seconds"
   },
   {
     "device": "tissot",
@@ -45,19 +45,19 @@
     "device": "X00P-3.18",
     "branch": "master",
     "status": "Passing",
-    "time": "175 seconds"
+    "time": "84 seconds"
   },
   {
     "device": "X00P-4.9",
     "branch": "master",
     "status": "Passing",
-    "time": "317 seconds"
+    "time": "155 seconds"
   },
   {
     "device": "X01AD",
     "branch": "master",
     "status": "Passing",
-    "time": "317 seconds"
+    "time": "194 seconds"
   },
   {
     "device": "ysl",
